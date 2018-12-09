@@ -1,0 +1,6 @@
+name: ProxyBlocker
+main: emretr1\proxyblocker\Loader
+version: 1.0
+api: 3.0.0
+author: EmreTr1
+description: This a anti-hack for proxy users (like McpeProxy)
