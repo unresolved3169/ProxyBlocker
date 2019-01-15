@@ -6,6 +6,7 @@ use pocketmine\event\Listener;
 use pocketmine\event\server\DataPacketReceiveEvent;
 use pocketmine\network\mcpe\protocol\LoginPacket;
 use pocketmine\plugin\PluginBase;
+use pocketmine\utils\Internet;
 
 class Loader extends PluginBase implements Listener{
 
@@ -14,7 +15,7 @@ class Loader extends PluginBase implements Listener{
 	public function onEnable(){
 		$this->reloadConfig();
 
-		$this->acceptedIps = array_merge($this->getConfig()->get("ignored-ips"), [$this->getServer()->getIp(), "localhost", "0.0.0.0", "127.0.0.1"]);
+		$this->acceptedIps = array_merge($this->getConfig()->get("ignored-ips"), [$this->getServer()->getIp(), "localhost", "0.0.0.0", "127.0.0.1", Internet::getIP()]);
 		$this->getServer()->getPluginManager()->registerEvents($this, $this);
 	}
 
